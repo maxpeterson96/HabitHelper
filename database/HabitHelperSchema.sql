@@ -7,6 +7,7 @@ USE habit_helper;
 CREATE TABLE IF NOT EXISTS habits (
   id SERIAL PRIMARY KEY,
   habit TEXT,
-  description TEXT,
-  time BIGINT
+  message TEXT,
+  time BIGINT,
+  frequency Text
 )
