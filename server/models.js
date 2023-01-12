@@ -20,9 +20,8 @@ module.exports = {
         return error;
       })
   },
-  postHabit: ({ habit, message, time, frequency }) => {
-    console.log('in models', message)
-    return db.query(`INSERT INTO habits (habit, message, time, frequency) VALUES ('${habit}', '${message}', ${time}, '${frequency}')`)
+  postHabit: ({ habit, message, hour, minutes, frequency }) => {
+    return db.query(`INSERT INTO habits (habit, message, hour, minutes, frequency) VALUES ('${habit}', '${message}', ${hour}, ${minutes}, '${frequency}')`)
       .then((results) => {
         scheduleHabit(message, frequency);
         return results

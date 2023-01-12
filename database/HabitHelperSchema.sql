@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS habits (
   id SERIAL PRIMARY KEY,
   habit TEXT,
   message TEXT,
-  time BIGINT,
+  hour TEXT,
+  minutes TEXT,
   frequency Text
 )
