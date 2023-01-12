@@ -1,4 +1,6 @@
 const models = require('./models');
+const schedule = require('node-schedule');
+const { scheduleHabit } = require('../helpers/scheduler.js');
 
 module.exports = {
   getHabits: (req, res) => {
@@ -8,7 +10,7 @@ module.exports = {
   },
   getHabit: (req, res) => {
     const { query: { id } } = req;
-    models.queryHabits(i)
+    models.queryHabits(id)
       .then((results) => res.status(200).send(results))
       .catch((error) => res.status(500).send(error))
   },
@@ -21,7 +23,7 @@ module.exports = {
     models.updatehabit(req.params.product_id)
       .then((results) => res.status(204).send(results))
       .catch((error) => res.status(500).send(error))
-  }
+  },
 };
 
 
