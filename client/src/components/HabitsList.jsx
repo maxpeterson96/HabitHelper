@@ -3,10 +3,17 @@ import Habit from './Habit.jsx';
 
 const HabitsList = ({ habits }) => {
 
-  console.log('habits list', habits);
+  const [sortedHabits, setSortedHabits] = useState([]);
+
+  useEffect(() => {
+    console.log('before', habits)
+    let sortHabits = habits.sort((a, b) => (a.hour > b.hour ? 1 : -1));
+    setSortedHabits(sortedHabits);
+    console.log('sorted', sortHabits);
+  }, [habits])
 
   return (
-    habits.map((habit, index) => (
+    sortedHabits.map((habit, index) => (
       <Habit habit={habit} index={index + 1} />
     ))
   )

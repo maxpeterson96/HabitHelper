@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@material-ui/icons": "^4.11.3",
     "@mui/icons-material": "^5.11.0",
     "@mui/material": "^5.11.4",
     "axios": "^1.2.2",
@@ -12,7 +13,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^5.3.6",
-    "twilio": "^3.84.0"
+    "twilio": "^2.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",

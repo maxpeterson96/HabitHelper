@@ -2,10 +2,10 @@ const schedule = require('node-schedule');
 const { sendMessage } = require('./twilio.js');
 
 module.exports = {
-  scheduleHabit: (message, frequency) => {
-    schedule.scheduleJob(frequency, () => {
+  scheduleHabit: (message, habit, hour, minutes, frequency) => {
+    schedule.scheduleJob(`${minutes} ${hour} * * ${frequency}`, () => {
       sendMessage(message);
-      console.log('scheduled')
+      console.log(`scheduled ${habit} for ${minutes} ${hour} * * ${frequency}`)
     })
   },
   scheduleHello: () => {
