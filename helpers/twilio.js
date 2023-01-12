@@ -8,8 +8,8 @@ module.exports = {
     client.messages
     .create({
        body,
-       from: '+17657032650',
-       to: '+16508884721'
+       from: process.env.TWILIO_PHONE,
+       to: process.env.MY_PHONE
      })
     .then(message => console.log(message.sid));
   },
