@@ -51,6 +51,7 @@ const App = () => {
           <styling.HabitsContainer>
             <HabitsList habits={habits} />
           </styling.HabitsContainer>
+          <styling.Buttons onClick={schedule}>Say Hello</styling.Buttons>
       </styling.HabitHelperContainer>
     </styling.HabitHelperPageContainer>
   )

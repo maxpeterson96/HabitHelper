@@ -17,7 +17,7 @@ router.put('/sendMessage', (req, res) => {
 })
 
 router.put('/schedule', (req, res) => {
-  scheduleHabit();
+  scheduleHello();
   res.status(204).send();
 })
 

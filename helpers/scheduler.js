@@ -30,13 +30,12 @@ module.exports = {
       })
   },
   scheduleHello: () => {
-    schedule.scheduleJob('*/10 * * * * *', () => {
-      console.log('hello at 10:20');
-      // sendMessage('Hello and welcome to Habit Helper. To get started, please schedule your new habits through our online portal');
+    schedule.scheduleJob('* * * * *', () => {
+      console.log('Saying hello');
+      sendMessage('Hello and welcome to Habit Helper. To get started, please schedule your new habits through our online portal');
     })
   }
 }
-
 
 // */10 * * * * *
 
