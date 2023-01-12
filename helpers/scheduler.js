@@ -30,13 +30,14 @@ module.exports = {
       })
   },
   scheduleHello: () => {
-    const date = new Date(2023, 01, 10, 12, 34);
-    schedule.scheduleJob('20 10 * * *', () => {
+    schedule.scheduleJob('*/10 * * * * *', () => {
       console.log('hello at 10:20');
-      sendMessage('good afternoon at 10:20');
+      // sendMessage('Hello and welcome to Habit Helper. To get started, please schedule your new habits through our online portal');
     })
   }
 }
 
 
 // */10 * * * * *
+
+// const cron = `${minutes} ${hour} * * ${frequency}`;

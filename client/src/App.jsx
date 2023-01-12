@@ -39,8 +39,7 @@ const App = () => {
     <styling.HabitHelperPageContainer>
       <styling.HabitHelperContainer>
         <h1 style={{ fontSize: '2.6rem' }}>Habit Helper</h1>
-        <button onClick={toggleNewHabit}>Add New Habit</button>
-        <button onClick={schedule}>Schedule</button>
+        <styling.Buttons onClick={toggleNewHabit}>Add New Habit</styling.Buttons>
           <styling.HabitsContainer>
             {newHabit ? (
               <NewHabit

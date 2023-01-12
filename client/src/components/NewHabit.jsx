@@ -127,8 +127,8 @@ const NewHabit = ({ getHabits, setNewHabit }) => {
       </FormControl>
       <br/>
       <br/>
-      <button onClick={submitHabit}>Submit New Habit</button>
-      <button onClick={exit}>Cancel</button>
+      <styling.Buttons onClick={submitHabit}>Submit New Habit</styling.Buttons>
+      <styling.Buttons onClick={exit}>Cancel</styling.Buttons>
     </styling.NewHabitTile>
   )
 

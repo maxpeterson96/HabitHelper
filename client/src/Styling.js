@@ -1,7 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 
 export const HabitHelperPageContainer = styled.div`
-  border: solid 1px yellow;
   height: 100%;
   width: 100%;
 `;
@@ -15,7 +14,6 @@ export const HabitHelperContainer = styled.div`
   margin: auto;
   height: 100%;
   padding-top: 3%;
-  border: solid 1px blue;
 `;
 
 
@@ -29,7 +27,6 @@ export const HabitsContainer = styled.div`
   margin: auto;
   height: 100%;
   padding-top: 3%;
-  border: solid 1px blue;
 `;
 
 
@@ -37,36 +34,56 @@ export const HabitTile = styled.div`
   text-align: center;
   vertical-align: middle;
   display: flex;
-  border-right: solid 1px black;
+  border: solid 1px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
   margin: auto;
   width: 100%;
   height 300%;
   padding-bottom: 1rem;
   padding-top: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem
 `
 
 export const HabitNumberInfo = styled.div`
   display: flex;
   justify-content: center;
-  border: solid 1px orange;
   margin: auto;
-  width: 15%;
+  width: 20%;
 `
 
 export const HabitTileInfo = styled.div`
   display: flex;
-  justify-content: left;
-  border: solid 1px orange;
+  text-align: start;
   padding-left: 1rem;
   margin: auto;
-  width: 85%;
+  width: 80%;
 `
 
 export const NewHabitTile = styled.div` text-align: center;
   vertical-align: middle;
-  border-right: solid 1px rgba(0, 0, 0, 0.25);
   margin: auto;
   width: 100%;
   height 500%;
   padding-bottom: 1rem;
 `
+
+export const Buttons = styled.button`
+  border-radius: 0.25rem;
+  padding: .5rem;
+  cursor: pointer;
+  border: 0.0625rem solid;
+  border-color: teal;
+  background-color: teal;
+  color: white;
+  width: 15%;
+  overflow-wrap: break-word;
+  min-width: fit-content;
+  max-width: fit-content;
+  &: hover{
+    background-color: #bfe3b4;
+    color: black;
+    cursor: pointer;
+    border-color: teal;
+  }
+`;
