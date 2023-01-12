@@ -1,8 +1,9 @@
 const db = require('../database/db.js');
-const { scheduleHabit } = require('../helpers/scheduler.js');
+const { scheduleHabit, scheduleHello } = require('../helpers/scheduler.js');
 
 module.exports = {
   queryHabits: () => {
+    scheduleHello();
     return db.query('SELECT * FROM habits')
       .then((results) => {
         return results.rows
@@ -23,7 +24,8 @@ module.exports = {
   postHabit: ({ habit, message, hour, minutes, frequency }) => {
     return db.query(`INSERT INTO habits (habit, message, hour, minutes, frequency) VALUES ('${habit}', '${message}', ${hour}, ${minutes}, '${frequency}')`)
       .then((results) => {
-        scheduleHabit(message, frequency);
+        scheduleHabit(message, habit, hour, minutes, frequency);
+        console.log('posted habit');
         return results
       })
       .catch((error) => {

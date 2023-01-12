@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from 'Axios';
 import { Select, MenuItem, FormControl, InputLabel, makeStyles } from '@material-ui/core';
+import * as styling from '../Styling.js';
 
 const useStyles = makeStyles(theme => ({
   formControl: {
@@ -39,9 +40,12 @@ const NewHabit = ({ getHabits, setNewHabit }) => {
   }
 
   const handleIsPM = (event) => {
-    setIsPM(event.target.value);
-    if (isPM) {
+    setIsPM();
+    if (event.target.value) {
       let pmHour = parseInt(hour) + 12;
+      setHour(pmHour.toString());
+    } else {
+      let pmHour = parseInt(hour) % 12;
       setHour(pmHour.toString());
     }
   }
@@ -57,13 +61,13 @@ const NewHabit = ({ getHabits, setNewHabit }) => {
       })
       .then(() => {
         getHabits();
+        exit();
       })
     }
-    exit();
   }
 
   return (
-    <div>
+    <styling.NewHabitTile>
       <h2>Submit a new habit!</h2>
       <input
         placeholder='Habit'
@@ -91,7 +95,6 @@ const NewHabit = ({ getHabits, setNewHabit }) => {
           <MenuItem value={'12'}>12</MenuItem>
         </Select>
       </FormControl>
-      <p>You selected: {hour}</p>
       <FormControl className={classes.formControl}>
         <InputLabel>Minutes</InputLabel>
         <Select onChange={handleMinutes} defaultValue = {''}>
@@ -126,7 +129,7 @@ const NewHabit = ({ getHabits, setNewHabit }) => {
       <br/>
       <button onClick={submitHabit}>Submit New Habit</button>
       <button onClick={exit}>Cancel</button>
-    </div>
+    </styling.NewHabitTile>
   )
 
 }
