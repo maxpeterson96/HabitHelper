@@ -14,6 +14,7 @@ router.put('/habits', controllers.update);
 router.put('/sendMessage', (req, res) => {
   sendMessage();
   res.status(204).send();
+  console.log('test');
 })
 
 router.put('/schedule', (req, res) => {
